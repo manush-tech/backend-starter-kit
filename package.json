@@ -1,0 +1,59 @@
+{
+  "name": "backend-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "webpack --mode production --env NODE_ENV=production",
+    "start": "webpack --mode production --env NODE_ENV=production",
+    "build:dev": "webpack --mode development --watch --env NODE_ENV=development",
+    "serve": "nodemon dist/server.js",
+    "dev": "npm-run-all -p build:dev serve",
+    "migrate:dev": "npx dotenv-cli -e ./config/.env.development -- knex migrate:latest",
+    "migrate:make": "npx dotenv-cli -e ./config/.env.development -- knex migrate:make",
+    "rollback:dev": "npx dotenv-cli -e ./config/.env.development -- knex migrate:rollback",
+    "seed:make": "npx dotenv-cli -e ./config/.env.development -- knex seed:make",
+    "seed:run": "npx dotenv-cli -e ./config/.env.development -- knex seed:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manush-tech/blend-app-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manush-tech/blend-app-backend/issues"
+  },
+  "homepage": "https://github.com/manush-tech/blend-app-backend#readme",
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "aws-sdk": "^2.1041.0",
+    "babel-loader": "^9.1.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "^7.0.0",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "ioredis": "^5.3.0",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^2.10.0",
+    "nanoid": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "objection": "^3.0.1",
+    "pg": "^8.9.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0",
+    "webpack-shell-plugin": "^0.5.0",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  }
+}
